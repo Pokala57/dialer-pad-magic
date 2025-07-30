@@ -8,56 +8,70 @@ interface HomePageProps {
 
 export const HomePage = ({ onGetStarted }: HomePageProps) => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* Floating wave animation similar to Vaanee */}
+        <div className="absolute left-0 top-1/4 w-full h-1 bg-gradient-wave opacity-30 animate-pulse"></div>
+      </div>
+
+      <div className="container mx-auto px-4 py-16 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-6">
-            <Headphones className="w-10 h-10 text-primary-foreground" />
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full mb-8 shadow-2xl shadow-primary/30">
+            <Headphones className="w-12 h-12 text-primary-foreground" />
           </div>
-          <h1 className="text-5xl font-bold text-foreground mb-6">
-            Agent IVR System
+          <h1 className="text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Agent IVR System
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Professional call management solution for seamless customer interactions. 
-            Connect, communicate, and provide exceptional service with our advanced IVR platform.
+            <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-semibold">
+              Multilingual. Hyper-Realistic. Enterprise.
+            </span>
           </p>
         </div>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <Card className="text-center hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-b from-card to-card/80">
+          <Card className="text-center hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-0 bg-gradient-to-b from-card/90 to-card/50 backdrop-blur-xl hover:scale-105">
             <CardContent className="p-8">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-primary" />
+              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Phone className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Smart Calling</h3>
-              <p className="text-muted-foreground">
-                Intelligent call routing with advanced IVR capabilities for efficient customer service.
+              <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Smart Calling</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Intelligent call routing with advanced IVR capabilities for efficient customer service and real-time analytics.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-b from-card to-card/80">
+          <Card className="text-center hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-0 bg-gradient-to-b from-card/90 to-card/50 backdrop-blur-xl hover:scale-105">
             <CardContent className="p-8">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-primary" />
+              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Users className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Agent Management</h3>
-              <p className="text-muted-foreground">
-                Comprehensive agent dashboard with real-time monitoring and performance analytics.
+              <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Agent Management</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Comprehensive agent dashboard with real-time monitoring, performance analytics, and quality assurance.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="text-center hover:shadow-lg transition-all duration-300 border-0 bg-gradient-to-b from-card to-card/80">
+          <Card className="text-center hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-0 bg-gradient-to-b from-card/90 to-card/50 backdrop-blur-xl hover:scale-105">
             <CardContent className="p-8">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Headphones className="w-8 h-8 text-primary" />
+              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Headphones className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">24/7 Support</h3>
-              <p className="text-muted-foreground">
-                Round-the-clock customer support with automated responses and live agent fallback.
+              <h3 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">24/7 Support</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Round-the-clock customer support with automated responses, live agent fallback, and multi-language capabilities.
               </p>
             </CardContent>
           </Card>
@@ -65,20 +79,24 @@ export const HomePage = ({ onGetStarted }: HomePageProps) => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <Card className="max-w-2xl mx-auto border-0 bg-gradient-to-r from-primary/5 to-primary/10 backdrop-blur-sm">
-            <CardContent className="p-12">
-              <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-muted-foreground mb-8 text-lg">
+          <Card className="max-w-3xl mx-auto border-0 bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur-xl shadow-2xl shadow-primary/20">
+            <CardContent className="p-16">
+              <h2 className="text-4xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Ready to Get Started?
+                </span>
+              </h2>
+              <p className="text-muted-foreground mb-10 text-xl leading-relaxed max-w-2xl mx-auto">
                 Begin your journey with our powerful IVR system. Make your first call and experience 
-                the difference in customer communication.
+                the difference in customer communication with enterprise-grade reliability.
               </p>
               <Button 
                 onClick={onGetStarted}
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-12 py-8 text-xl font-semibold rounded-full shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-500 transform hover:scale-110"
               >
                 Get Started
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <ArrowRight className="w-6 h-6 ml-3" />
               </Button>
             </CardContent>
           </Card>
